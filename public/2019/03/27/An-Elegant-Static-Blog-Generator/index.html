@@ -6,19 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>An Elegant Static Blog Generator ———— 使用 github pages 和 hexo 搭建个人博客 | Hexo</title>
+  <title>An Elegant Static Blog Generator | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="摘要An elegant static blog generator 意为一个简洁的静态博客生成器，目的是为博客创作者提供便利。 这个静态博客生成器主要由两部分构成：github pages 和 hexo。Github pages 是供用户实现托管服务的一个静态网站，hexo 则是一个简洁、高效的博客框架。 今天我们的目的就是使用 github pages 和 hexo 搭建用户自己的个人博客，以">
+  <meta name="description" content="使用 github pages 和 hexo 搭建个人博客">
+<meta name="keywords" content="hexo,blog">
 <meta property="og:type" content="article">
-<meta property="og:title" content="An Elegant Static Blog Generator ———— 使用 github pages 和 hexo 搭建个人博客">
+<meta property="og:title" content="An Elegant Static Blog Generator">
 <meta property="og:url" content="http://yoursite.com/2019/03/27/An-Elegant-Static-Blog-Generator/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="摘要An elegant static blog generator 意为一个简洁的静态博客生成器，目的是为博客创作者提供便利。 这个静态博客生成器主要由两部分构成：github pages 和 hexo。Github pages 是供用户实现托管服务的一个静态网站，hexo 则是一个简洁、高效的博客框架。 今天我们的目的就是使用 github pages 和 hexo 搭建用户自己的个人博客，以">
+<meta property="og:description" content="使用 github pages 和 hexo 搭建个人博客">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-03-27T09:35:32.433Z">
+<meta property="og:updated_time" content="2019-03-27T09:43:12.592Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="An Elegant Static Blog Generator ———— 使用 github pages 和 hexo 搭建个人博客">
-<meta name="twitter:description" content="摘要An elegant static blog generator 意为一个简洁的静态博客生成器，目的是为博客创作者提供便利。 这个静态博客生成器主要由两部分构成：github pages 和 hexo。Github pages 是供用户实现托管服务的一个静态网站，hexo 则是一个简洁、高效的博客框架。 今天我们的目的就是使用 github pages 和 hexo 搭建用户自己的个人博客，以">
+<meta name="twitter:title" content="An Elegant Static Blog Generator">
+<meta name="twitter:description" content="使用 github pages 和 hexo 搭建个人博客">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -167,7 +168,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      An Elegant Static Blog Generator ———— 使用 github pages 和 hexo 搭建个人博客
+      An Elegant Static Blog Generator
     </h1>
   
 
@@ -180,12 +181,46 @@
     
 
 <!-- 目录内容 -->
-		
+
+    <p class="show-toc-btn" id="show-toc-btn" onclick="showToc();" style="display:none">
+          <span class="btn-bg"></span>
+          <span class="btn-text">文章导航</span>
+          </p>
+	<div id="toc-article" class="toc-article">
+	    <span id="toc-close" class="toc-close" title="隐藏导航" onclick="showBtn();">×</span>
+		<strong class="toc-title">文章目录</strong>
+           <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#摘要"><span class="toc-number">1.</span> <span class="toc-text">摘要</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#前言"><span class="toc-number">2.</span> <span class="toc-text">前言</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#搭建准备"><span class="toc-number">3.</span> <span class="toc-text">搭建准备</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#（一）git-的下载与安装"><span class="toc-number">3.1.</span> <span class="toc-text">（一）git 的下载与安装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#（二）node-js-、npm-与-hexo-的下载安装"><span class="toc-number">3.2.</span> <span class="toc-text">（二）node.js 、npm 与 hexo 的下载安装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#（三）github-账号注册及-SSH-配置"><span class="toc-number">3.3.</span> <span class="toc-text">（三）github 账号注册及 SSH 配置</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#把本地博客上传到-github-仓库"><span class="toc-number">4.</span> <span class="toc-text">把本地博客上传到 github 仓库</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#撰写博客"><span class="toc-number">5.</span> <span class="toc-text">撰写博客</span></a></li></ol>
+         </div>
+   <script type="text/javascript">
+	function showToc(){
+		var toc_article = document.getElementById("toc-article");
+		var show_toc_btn = document.getElementById("show-toc-btn");
+		toc_article.setAttribute("style","display:block");
+		show_toc_btn.setAttribute("style","display:none");
+		};
+	function showBtn(){
+		var toc_article = document.getElementById("toc-article");
+		var show_toc_btn = document.getElementById("show-toc-btn");
+		toc_article.setAttribute("style","display:none");
+		show_toc_btn.setAttribute("style","display:block");
+		};
+   </script>
+      		
 <!-- 目录内容结束 -->
 
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>An elegant static blog generator 意为一个简洁的静态博客生成器，目的是为博客创作者提供便利。</p>
+        <ul>
+<li><ul>
+<li><ul>
+<li>使用 github pages 和 hexo 搭建个人博客<a id="more"></a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>An elegant static blog generator 意为一个简洁的静态博客生成器，目的是为博客创作者提供便利。</p>
 <p>这个静态博客生成器主要由两部分构成：github pages 和 hexo。Github pages 是供用户实现托管服务的一个静态网站，hexo 则是一个简洁、高效的博客框架。</p>
 <p>今天我们的目的就是<code>使用 github pages 和 hexo 搭建用户自己的个人博客</code>，以下配置均在 <code>ubuntu</code> 系统下进行。</p>
 <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>之前往 github 上提交过东西，自认为写的是个人博客，直到后来听他们说起 github pages ，才发现自己只是提交到了新的仓库（repository）里面 ，出糗了，尴尬…</p>
@@ -322,7 +357,33 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">hexo</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">blog</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/blog//" class="article-tag-list-link color5">blog</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
 
       
 
@@ -387,8 +448,8 @@
 <nav id="article-nav">
   
   
-    <a href="/2019/03/22/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Hello World</div>
+    <a href="/2019/03/22/ubuntu 系统下 github pages 个人博客搭建 -- hexo/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">ubuntu 系统下 github pages 个人博客搭建 -- hexo</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -512,10 +573,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
             <input type="checkbox" q-on="click:toggleTag(e)" q-attr="checked:showTags">
           </label>
           <ul class="article-tag-list" q-show="showTags">
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
-              </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">hexo</a>

@@ -1,9 +1,16 @@
 ---
-title: An Elegant Static Blog Generator ———— 使用 github pages 和 hexo 搭建个人博客
+title: An Elegant Static Blog Generator 
 date: 2019-03-27 17:34:18
-tags:
+comments: true #是否可评论
+categories: blog #分类
+toc: true #是否显示文章目
+tags:   #标签
+	- hexo
+	- blog
 ---
 
+- - -  使用 github pages 和 hexo 搭建个人博客
+<!-- more -->
 
 # 摘要
 
