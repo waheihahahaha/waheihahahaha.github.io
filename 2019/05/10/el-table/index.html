@@ -8,19 +8,19 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>el-table--JavaScript | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="el-table–JavaScript">
+  <meta name="description" content="首先介绍几点遇到的坑： 123451、npm 安装之后还需要进行配置，勿忘记2、安装时在 element-ui 的配置中会带有 line-height（行高），  此时若字体大于行高，表格字体会显示不全，需要在 .cell 添加 line-height:normal;  下面还会讲到3、某个单元格的样式改变需要根据 rowIndex 和 columnIndex 来辅助实现 使用 element-">
 <meta name="keywords" content="el-table,javaScript">
 <meta property="og:type" content="article">
 <meta property="og:title" content="el-table--JavaScript">
 <meta property="og:url" content="http://yoursite.com/2019/05/10/el-table/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="el-table–JavaScript">
+<meta property="og:description" content="首先介绍几点遇到的坑： 123451、npm 安装之后还需要进行配置，勿忘记2、安装时在 element-ui 的配置中会带有 line-height（行高），  此时若字体大于行高，表格字体会显示不全，需要在 .cell 添加 line-height:normal;  下面还会讲到3、某个单元格的样式改变需要根据 rowIndex 和 columnIndex 来辅助实现 使用 element-">
 <meta property="og:locale" content="default">
 <meta property="og:image" content="https://img-blog.csdnimg.cn/20190510150135422.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzE3NDIyNQ==,size_16,color_FFFFFF,t_70">
-<meta property="og:updated_time" content="2019-05-10T07:18:59.746Z">
+<meta property="og:updated_time" content="2019-05-10T07:34:43.635Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="el-table--JavaScript">
-<meta name="twitter:description" content="el-table–JavaScript">
+<meta name="twitter:description" content="首先介绍几点遇到的坑： 123451、npm 安装之后还需要进行配置，勿忘记2、安装时在 element-ui 的配置中会带有 line-height（行高），  此时若字体大于行高，表格字体会显示不全，需要在 .cell 添加 line-height:normal;  下面还会讲到3、某个单元格的样式改变需要根据 rowIndex 和 columnIndex 来辅助实现 使用 element-">
 <meta name="twitter:image" content="https://img-blog.csdnimg.cn/20190510150135422.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzE3NDIyNQ==,size_16,color_FFFFFF,t_70">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
@@ -191,7 +191,7 @@
 	<div id="toc-article" class="toc-article">
 	    <span id="toc-close" class="toc-close" title="隐藏导航" onclick="showBtn();">×</span>
 		<strong class="toc-title">文章目录</strong>
-           <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#el-table–JavaScript"><span class="toc-number">1.</span> <span class="toc-text">el-table–JavaScript</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#使用-element-UI-的配置"><span class="toc-number">1.1.</span> <span class="toc-text">使用 element-UI 的配置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#页面效果"><span class="toc-number">1.2.</span> <span class="toc-text">页面效果</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#template-部分"><span class="toc-number">1.3.</span> <span class="toc-text">template 部分</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#script-部分"><span class="toc-number">1.4.</span> <span class="toc-text">script 部分</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#style-部分"><span class="toc-number">1.5.</span> <span class="toc-text">style 部分</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#整体代码示例"><span class="toc-number">1.6.</span> <span class="toc-text">整体代码示例</span></a></li></ol></li></ol>
+           <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#使用-element-UI-的配置"><span class="toc-number">1.</span> <span class="toc-text">使用 element-UI 的配置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#页面效果"><span class="toc-number">2.</span> <span class="toc-text">页面效果</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#template-部分"><span class="toc-number">3.</span> <span class="toc-text">template 部分</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#script-部分"><span class="toc-number">4.</span> <span class="toc-text">script 部分</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#style-部分"><span class="toc-number">5.</span> <span class="toc-text">style 部分</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#整体代码示例"><span class="toc-number">6.</span> <span class="toc-text">整体代码示例</span></a></li></ol>
          </div>
    <script type="text/javascript">
 	function showToc(){
@@ -212,7 +212,7 @@
 
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="el-table–JavaScript"><a href="#el-table–JavaScript" class="headerlink" title="el-table–JavaScript"></a>el-table–JavaScript</h1><a id="more"></a>
+        <a id="more"></a>
 <p>首先介绍几点遇到的坑：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">1、npm 安装之后还需要进行配置，勿忘记</span><br><span class="line">2、安装时在 element-ui 的配置中会带有 line-height（行高），</span><br><span class="line">  此时若字体大于行高，表格字体会显示不全，需要在 .cell 添加 line-height:normal;</span><br><span class="line">  下面还会讲到</span><br><span class="line">3、某个单元格的样式改变需要根据 rowIndex 和 columnIndex 来辅助实现</span><br></pre></td></tr></table></figure>
 <h2 id="使用-element-UI-的配置"><a href="#使用-element-UI-的配置" class="headerlink" title="使用 element-UI 的配置"></a>使用 element-UI 的配置</h2><p>此处调用 element 组件的 el-table，调用之前需要进行的配置：<br>1、npm 进行安装</p>
