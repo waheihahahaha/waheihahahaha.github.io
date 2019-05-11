@@ -16,12 +16,12 @@
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="快速排序的实例及代码">
 <meta property="og:locale" content="default">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/20190425161649723.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzE3NDIyNQ==,size_16,color_FFFFFF,t_70">
-<meta property="og:updated_time" content="2019-05-11T06:32:22.347Z">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20190511143900440.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzE3NDIyNQ==,size_16,color_FFFFFF,t_70">
+<meta property="og:updated_time" content="2019-05-11T06:39:10.348Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="快速排序的 JavaScript 实现">
 <meta name="twitter:description" content="快速排序的实例及代码">
-<meta name="twitter:image" content="https://img-blog.csdnimg.cn/20190425161649723.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzE3NDIyNQ==,size_16,color_FFFFFF,t_70">
+<meta name="twitter:image" content="https://img-blog.csdnimg.cn/20190511143900440.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzE3NDIyNQ==,size_16,color_FFFFFF,t_70">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -498,7 +498,7 @@
 </table>
 <p>这时，排序完成</p>
 <h2 id="上代码"><a href="#上代码" class="headerlink" title="上代码"></a>上代码</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">quickSort(arr)&#123;                        <span class="comment">// 快速排序挖坑法，arr 为未排序数组</span></span><br><span class="line">      <span class="keyword">if</span> (arr.length &lt;= <span class="number">1</span>) &#123;           <span class="comment">// 传入的数组的长度小于等于1，排序完成      </span></span><br><span class="line">      	<span class="keyword">return</span> arr;</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="keyword">var</span> x = arr[<span class="number">0</span>]                   <span class="comment">// 选择序列的第一个元素作为基准值</span></span><br><span class="line">      arr[<span class="number">0</span>] = <span class="string">''</span>                      <span class="comment">// 基准值所在索引对应的值设为空值</span></span><br><span class="line">      <span class="keyword">let</span> i = <span class="number">0</span>                        <span class="comment">// 前指针指向数组开始</span></span><br><span class="line">      <span class="keyword">let</span> j = arr.length - <span class="number">1</span>           <span class="comment">// 后指针指向数组末</span></span><br><span class="line">      <span class="keyword">while</span> (i &lt; j) &#123;                  <span class="comment">// 前指针指向的索引小于后指针时，循环，否则前后指针相遇，排序完成一趟，退出循环</span></span><br><span class="line">        <span class="keyword">while</span> (i &lt; j &amp;&amp; arr[j] &gt; x) &#123;  <span class="comment">// 后指针移动，后指针指向的索引大于前指针同时指向的e值大于基准值时，后指针往前走一步，循环，条件有一不满足，退出循环</span></span><br><span class="line">          j --</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (arr[j] &lt;= x) &#123;             <span class="comment">// 退出循环时，后指针指向的值若小于基准值，把当前值赋值给左侧空值（填坑），同时当前索引对应的值设为空（挖坑）</span></span><br><span class="line">          arr[i] = arr[j]   </span><br><span class="line">          arr[j] = <span class="string">''</span></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">while</span> (i &lt; j &amp;&amp; arr[i] &lt; x) &#123;  <span class="comment">// 前指针移动，前指针指向的索引小于后指针同时指向的值大于基准值，前指针往后走一步，循环，条件之一不满足，退出循环</span></span><br><span class="line">          i ++</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (arr[i] &gt;= x) &#123;             <span class="comment">// 退出循环时，前指针指向的值若大于基准值，把当前值赋值给右侧空值（填坑），同时当前索引对应的值设为空（挖坑）</span></span><br><span class="line">          arr[j] = arr[i]</span><br><span class="line">          arr[i] = <span class="string">''</span></span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="keyword">let</span> a = arr.indexOf(<span class="string">''</span>)         <span class="comment">// 此时，前后置镇相遇，第一趟排序完成，寻找空值所在位置，并把基准值填入</span></span><br><span class="line">      arr[a] = x</span><br><span class="line">      </span><br><span class="line">      <span class="keyword">let</span> left = arr.slice(<span class="number">0</span>, a)      <span class="comment">// 把基准值左侧的值看为一个新的数组 left</span></span><br><span class="line">      <span class="keyword">let</span> right = arr.slice(a+<span class="number">1</span>, arr.length+<span class="number">1</span>)   <span class="comment">// 基准值右侧的值看为一个新的数组 right</span></span><br><span class="line">      <span class="comment">// 采用递归的方法，分别对上述左子表和右子表继续按上述规则执行，并用 .concat 连接起来</span></span><br><span class="line">      <span class="keyword">return</span> <span class="keyword">this</span>.quickSort(left).concat(x, <span class="keyword">this</span>.quickSort(right))</span><br><span class="line">    &#125;,</span><br></pre></td></tr></table></figure>
-<p>使用的时候，直接调用函数 quickSort() 就可以了。<br>比如说对上文中的例子使用此代码：<br><img src="https://img-blog.csdnimg.cn/20190425161649723.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzE3NDIyNQ==,size_16,color_FFFFFF,t_70" alt></p>
+<p>使用的时候，直接调用函数 quickSort() 就可以了。<br>比如说对上文中的例子使用此代码：<br><img src="https://img-blog.csdnimg.cn/20190511143900440.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzE3NDIyNQ==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
 
       
 
@@ -785,15 +785,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">npm run dev</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">快排</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">JavaScript</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">npm run dev</a>
               </li>
              
               <li class="article-tag-list-item">
